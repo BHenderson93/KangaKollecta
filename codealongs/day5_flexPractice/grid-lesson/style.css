@@ -1,0 +1,9 @@
+body{
+    display: gid;
+    grid-template-columns: repeat(3, 3fr);
+    grid-template-rows: repeat(auto, 10vh);
+    grid-template-areas: "header header" "sidebar main" "footer footer";
+}
+header{
+    g
+}

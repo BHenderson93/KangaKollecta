@@ -1,0 +1,36 @@
+/*#region main*/
+body {
+    background-color: aliceblue;
+}
+
+table, th,td {
+    border: 1px solid black;
+    font-weight: normal;
+    background-color: yellowgreen;
+}
+
+th {
+    padding: 5px;
+}
+
+thead th {
+    font-weight: bold;
+}
+
+tfoot td {
+    font-style: oblique;
+}
+td{
+    width:50%;
+}
+/*#endregion*/
+/*#region classes*/
+.comments{
+    color:blue;
+}
+/*#endregion classes*/
+/*#region ids*/
+#second {
+    font-style: italic;
+}
+/*#endregion ids*/

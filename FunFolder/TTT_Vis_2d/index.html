@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="appsRefactor.js" async defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="title-container">
+        <h1 id="title">Data Visualization: Tic-Tac-Toe</h1>
+        <h1 id="depth-display">View Depth: 5</h1>
+        <h1 id="animation-speed">Animation Speed: 3s</h1>
+    </div>
+    <div id="menu-container">
+        <button onclick="showInfoDisplay(true)"> What am I looking at..? </button>
+        <button onclick="animateGameNode(currentNode)">Animate This Tree</button>
+        <div class="drop-down-content">
+            <button onclick="onlyLines()">Only Lines</button>
+            <button onclick="colorizeLines()">Colorize Lines</button>
+            <button onclick="showForced()">Highlight Forced</button>
+            <button onclick="animateSlower()">Animate Slower</button>
+            <button onclick="increaseViewdepth()">Viewdepth++</button>
+
+            <button onclick="displayDecisive()">Decisive Nodes</button>
+            <button onclick="colorizeNodes()">Colorize Nodes</button>
+            <button onclick="closeForced()">Hide Forced</button>
+            <button onclick="animateFaster()">Animate Faster</button>
+            <button onclick="decreaseViewdepth()">Viewdepth--</button>
+
+        </div>
+        <button id="btn-reset">Reset Board</button>
+        <button id="btn-undo">Undo Move</button>
+        <button id="btn-redo">Redo Move</button>
+    </div>
+
+    <div class="info-container" id="info-container">
+        <div class="info-grid">
+            <div class="info-panel">
+                <p>1) This is a game tree! The center point represents the "node" that's being displayed. All lines extending out represent connections to other nodes. You read the tree like a clock for available squares on the board. That means that the top branch going slightly right (below) represents X taking the top left square.The line going straight down (third line clockwise) represents X taking the 3rd available square, middle left. The branches extending farther follow the same pattern. </p>
+                <img class="info-pic" src="images/Only_Lines_wPath.png" alt="">
+            </div>
+            <div class="info-panel">
+                <p>2) Whenever a node (some combination of X's and O's) results in a win for X (red), a win for O (blue), or a tie (green), they are depicted as a circle represented by that color.</p>
+                <img src="images/Primary_Nodes.png" alt="" class="info-pic">
+            </div>
+            <div class="info-panel">
+                <p>3) Each node counts the number of X wins, O wins, and ties, then colors itself and the line to it </p>
+                <img src="images/Colorize_Nodes_Lines.png" alt="" class="info-pic">
+            </div>
+            <div class="info-panel">Forced Variations <img src="images/FV_Open.png" alt="" class="info-pic">
+            </div>
+            <div class="info-panel">Forced Closed, Display, Viewdepth, and Animate <img src="images/FV_Closed.png"
+                    alt="" class="info-pic">
+            </div>
+            <div class="info-panel">Putting it all together <iframe src="https://www.youtube.com/embed/tCG-CgkSR6Q"
+                    frameborder="0"></iframe>
+            </div>
+        </div>
+        <button class="big-btn" onclick="showInfoDisplay(false)">Close Info Menu</button>
+    </div>
+    <div id="game-container">
+        <div id="tree-container">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div id="TTT-container">
+            <div id="TTT-gameboard">
+                <div class="TTT-tile" id="1"></div>
+                <div class="TTT-tile" id="2"></div>
+                <div class="TTT-tile" id="3"></div>
+                <div class="TTT-tile" id="4"></div>
+                <div class="TTT-tile" id="5"></div>
+                <div class="TTT-tile" id="6"></div>
+                <div class="TTT-tile" id="7"></div>
+                <div class="TTT-tile" id="8"></div>
+                <div class="TTT-tile" id="9"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
