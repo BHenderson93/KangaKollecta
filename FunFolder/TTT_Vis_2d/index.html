@@ -40,24 +40,32 @@
 
     <div class="info-container" id="info-container">
         <div class="info-grid">
-            <div class="info-panel">
-                <p>1) This is a game tree! The center point represents the "node" that's being displayed. All lines extending out represent connections to other nodes. You read the tree like a clock for available squares on the board. That means that the top branch going slightly right (below) represents X taking the top left square.The line going straight down (third line clockwise) represents X taking the 3rd available square, middle left. The branches extending farther follow the same pattern. </p>
-                <img class="info-pic" src="images/Only_Lines_wPath.png" alt="">
+            <div class="info-panel">Game Tree
+                <img class="info-pic" src="images/newLines.png" alt="">
+                <p>1) This is a game tree! The center point represents the "node" that's being displayed. All lines extending out represent connections to other nodes. You read the tree clockwise for available squares on the board. First branch from the center represents the player taking the first available square (reading across rows first).  </p>
+               
             </div>
-            <div class="info-panel">
-                <p>2) Whenever a node (some combination of X's and O's) results in a win for X (red), a win for O (blue), or a tie (green), they are depicted as a circle represented by that color.</p>
-                <img src="images/Primary_Nodes.png" alt="" class="info-pic">
+            <div class="info-panel">Primary Nodes
+                <p>2) Whenever a node (some combination of X's and O's) results in a win for X (red), a win for O (blue), or a tie (green), they are depicted as a circle represented by that color. Reading the tree *ahem* "A tie occurs if X chooses the first available square (middle left), O chooses the first available square (bottom left), and X takes the remaining square (bottom right).</p>
+                <img src="images/newPrimary.png" alt="" class="info-pic">
             </div>
-            <div class="info-panel">
-                <p>3) Each node counts the number of X wins, O wins, and ties, then colors itself and the line to it </p>
-                <img src="images/Colorize_Nodes_Lines.png" alt="" class="info-pic">
+            <div class="info-panel">Secondary Nodes
+                <p>3) Each node counts the number of X wins, O wins, and ties that extend from it, then colors itself and its line by blending the red, green, and blue components. The more red a node's circle and line is, the more X wins. The more blue, the more O wins. The more green, the more ties. </p>
+                <img src="images/newColorizedNodes.png" alt="" class="info-pic">
             </div>
-            <div class="info-panel">Forced Variations <img src="images/FV_Open.png" alt="" class="info-pic">
+            <div class="info-panel">Forced Variations 
+                <p>4) After working through the contents of the nodes below, a node can check to see if it's a forced variation, meaning that either the X player or the O player WILL win if they play perfectly. Nodes that are forced variations are shown with a larger cicle behind their RGB colored circle. These nodes are exceptionally valuable because they actually win, if played properly.</p>
+                <img src="images/newForced.png" alt="" class="info-pic">
             </div>
-            <div class="info-panel">Forced Closed, Display, Viewdepth, and Animate <img src="images/FV_Closed.png"
+            <div class="info-panel">Forced Closed, Display, Viewdepth, and Animate
+                <p>If it's a win it's a win. Let's hide it so we can see more clearly. But now that you can understand what those lines, circles, and colors mean, feel free to forget all of it and just click around the application finding cool looking nodes! Check out the construction animation or change the View Depth/Animation Speed.
+                </p>
+                <img src="images/newClosed.png"
                     alt="" class="info-pic">
             </div>
-            <div class="info-panel">Putting it all together <iframe src="https://www.youtube.com/embed/tCG-CgkSR6Q"
+            <div class="info-panel">Putting it all together
+                <p>Check out the video below for a 1 minute walkthrough, or click the button to the right to go straight in!</p>
+                <iframe src="https://www.youtube.com/watch?v=j_ljpKNlFT0"
                     frameborder="0"></iframe>
             </div>
         </div>

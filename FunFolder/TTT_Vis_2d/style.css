@@ -16,6 +16,9 @@ button{
     color:white;
     border-radius: 5vh;
 }
+p{
+    font-size: 2vh;
+}
 
 .drop-down-content{
     display:grid;
@@ -40,11 +43,15 @@ button{
     align-self:center;
 }
 .info-pic{
-    position:relative;
+    position:absolute;
     bottom:0;
     right:0;
+    float:right;
+    z-index:0;
     height:50%;
+    margin:2%;
 }
+
 .info-container{
     position: absolute;
     width:100vw;
@@ -67,6 +74,7 @@ button{
 }
 
 .info-panel{
+    position:relative;
     height: 100%;
     width: 100%;
     border:.2vw solid white;
