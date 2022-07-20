@@ -3,15 +3,17 @@
 {% block content %}
 <h1>Check out all these Roo's!</h1>
 {% for boi_or_girl in hoppy_bois_and_girls %}
-<div class="card">
-    <div class="card-content">
-        <h1>{{boi_or_girl.name}}</h1>
-        <p>Height: {{boi_or_girl.height}}</p>
-        <p>Age: {{boi_or_girl.age}}</p>
-        <p>Description: {{boi_or_girl.description}}</p>
-        <p>Favorite Species to Kick: {{boi_or_girl.favorite_species_to_kick}}</p>
+<a href="{% url 'detail' boi_or_girl.id %}">
+    <div class="card">
+        <div class="card-content">
+            <h1>{{boi_or_girl.name}}</h1>
+            <p>Height: {{boi_or_girl.height}}</p>
+            <p>Age: {{boi_or_girl.age}}</p>
+            <p>Description: {{boi_or_girl.description}}</p>
+            <p>Favorite Species to Kick: {{boi_or_girl.favorite_species_to_kick}}</p>
+        </div>
     </div>
-</div>
+</a>
 
 {% endfor %}
 

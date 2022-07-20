@@ -13,3 +13,8 @@ def about(request):
 def roo_list(request):
     kangas = Roo.objects.all()
     return render(request , 'roo_central/hoppy_bois_and_girls_list.html' , {'hoppy_bois_and_girls': kangas})
+
+def roo_detail(request , roo_id):
+    roo = Roo.objects.get(id=roo_id)
+    print("i am in the server")
+    return render(request , 'roo_central/roo_deets.html', {'kanga' : roo})

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">The juicy details regarding {{kanga.name}}</span>
+        <p>Height: {{kanga.height}}</p>
+        <p>Age: {{kanga.age}}</p>
+        <p>Description: {{kanga.description}}</p>
+        <p>Likes to kick: {{kanga.favorite_species_to_kick}}s</p>
+    </div>
+</div>
+
+
+{% endblock %}
