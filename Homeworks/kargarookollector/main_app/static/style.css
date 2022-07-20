@@ -1,0 +1,22 @@
+
+/*                   HTML Element Section                  */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer.page-footer {
+    padding-top: 0;
+    text-align: center;
+  }
+
+h1{
+    text-align: center;
+}
