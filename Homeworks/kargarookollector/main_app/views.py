@@ -22,3 +22,11 @@ def roo_detail(request , roo_id):
 class RooChipped(CreateView):
     model = Roo
     fields = '__all__'
+
+class RooUpdate(UpdateView):
+    model = Roo
+    fields = '__all__'
+
+class RooDelete(DeleteView):
+    model = Roo
+    success_url = '/roo-list'

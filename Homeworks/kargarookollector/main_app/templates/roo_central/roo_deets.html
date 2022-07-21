@@ -9,6 +9,10 @@
         <p>Description: {{kanga.description}}</p>
         <p>Likes to kick: {{kanga.favorite_species_to_kick}}s</p>
     </div>
+    <div class="card-action">
+        <a href="{% url 'roo_update' kanga.id %}">Edit</a>
+        <a href="{% url 'roo_delete' kanga.id %}">Delete</a>
+      </div>
 </div>
 
 {% endblock %}
