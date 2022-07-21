@@ -12,7 +12,35 @@
     <div class="card-action">
         <a href="{% url 'roo_update' kanga.id %}">Edit</a>
         <a href="{% url 'roo_delete' kanga.id %}">Delete</a>
-      </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-content">
+        {% for ride in kanga.ride_set.all %}
+        {% if not ride %}
+        <h1>Roo doesn't seem to have been ridden. Hop on them ASAP so we can document 'Homo sapien'</h1>
+        {% else %}
+        <div style="width:100%">
+            <tr style="display:flex;flex-flow:row nowrap;justify-content:space-around; width:100%">
+                <td>Duration: {{ride.duration}}</td>
+                <td>By: {{ride.species}}</td>
+                <td>Important Observations: {{ride.notes}}   </td>
+            </tr>
+
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+    <div class="card-content">
+        <form action="{% url 'ride_create' kanga.id %}" method="POST">
+            {% csrf_token %}
+            {{ riding_form.as_p }}
+            <input type="submit" class="btn" value="Ride that 'Roo!">
+        </form>
+
+    </div>
 </div>
 
 {% endblock %}

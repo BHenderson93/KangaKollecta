@@ -8,5 +8,6 @@ urlpatterns = [
     path('roo-details/<int:roo_id>', views.roo_detail, name='detail'),
     path('roo/chip' , views.RooChipped.as_view() , name='chip'),
     path('roo/<int:pk>/update/' , views.RooUpdate.as_view() , name='roo_update'),
-    path('roo/<int:pk>/delete/' , views.RooDelete.as_view() , name='roo_delete')
+    path('roo/<int:pk>/delete/' , views.RooDelete.as_view() , name='roo_delete'),
+    path('ride/<int:roo_id>/create' , views.ride_create , name='ride_create'),
 ]
