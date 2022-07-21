@@ -6,4 +6,5 @@ urlpatterns = [
     path('about' , views.about , name='about'),
     path('roo-list', views.roo_list, name='hoppys'),
     path('roo-details/<int:roo_id>', views.roo_detail, name='detail'),
+    path('roo/chip' , views.RooChipped.as_view() , name='chip')
 ]

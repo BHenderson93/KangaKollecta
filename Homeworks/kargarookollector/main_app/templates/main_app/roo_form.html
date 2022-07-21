@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Provide Tagged Roo's info for our list</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="Tag that roo!" class="btn">
+  </form>
+{% endblock %}

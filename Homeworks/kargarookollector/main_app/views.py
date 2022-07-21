@@ -18,3 +18,7 @@ def roo_detail(request , roo_id):
     roo = Roo.objects.get(id=roo_id)
     print("i am in the server")
     return render(request , 'roo_central/roo_deets.html', {'kanga' : roo})
+
+class RooChipped(CreateView):
+    model = Roo
+    fields = '__all__'
