@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if not species %}
+<h1>No riding species documented yet! Hop on a Roo and document 'Homo sapien', quick!</h1>
+{% else %}
+<h1>Species Documented Ridin' Roo's</h1>
+{% for s in species %}
+<div class="card" style="padding: 2vh">
+    <h1>{{s.name}}</h1>
+</div>
+{% endfor %}
+
+{% endif %}
+<div class="card-content">
+    <form action="{% url 'species_create' %}" method="POST">
+        {% csrf_token %}
+        {{ species_form.as_p }}
+        <input type="submit" class="btn" value="Click to Submit New Rider Species! Yeehaw!">
+    </form>
+</div>
+{% endblock %}

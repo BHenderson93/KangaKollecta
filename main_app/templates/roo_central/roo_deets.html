@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">The juicy details regarding {{kanga.name}}</span>
+        <p>Height (inches): {{kanga.height}}</p>
+        <p>Age: {{kanga.age}}</p>
+        <p>Description: {{kanga.description}}</p>
+        <p>Likes to kick: {{kanga.favorite_species_to_kick}}s</p>
+    </div>
+    <div class="card-action">
+        <a href="{% url 'roo_update' kanga.id %}">Edit</a>
+        <a href="{% url 'roo_delete' kanga.id %}">Delete</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-content">
+        {% for ride in kanga.ride_set.all %}
+        {% if not ride %}
+        <h1>Roo doesn't seem to have been ridden. Hop on them ASAP so we can document 'Homo sapien'</h1>
+        {% else %}
+        <div style="width:100%">
+            <tr style="display:flex;flex-flow:row nowrap;justify-content:space-around; width:100%">
+                <td>Duration in seconds: {{ride.duration}}</td>
+                <td>By: {{ride.species}}</td>
+                <td>Important Observations: {{ride.notes}} </td>
+            </tr>
+
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+    <div class="card-content">
+        <form action="{% url 'ride_create' kanga.id %}" method="POST">
+            {% csrf_token %}
+            {{ riding_form.as_p }}
+            <input type="submit" class="btn" value="Ride that 'Roo!">
+        </form>
+    </div>
+</div>
+<div class="card">
+    <div class="card-content">
+        <h1>Species that have ridden {{kanga.name}}</h1>
+
+        {% for spec in rider_species %}
+        <h2>{{spec}}</h2>
+        {% endfor %}
+
+    </div>
+</div>
+<div class="card">
+    <div class="card-content">
+        <h1>Species that have NOT ridden {{kanga.name}}</h1>
+        {% for spec in restofthem %}
+        <h2>{{spec}}</h2>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    const selectEl = document.getElementById('id_species');
+    M.FormSelect.init(selectEl);
+</script>
+{% endblock %}
