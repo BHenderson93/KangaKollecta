@@ -4,7 +4,7 @@ from .models import Ride, Species
 class RidingForm(ModelForm):
   class Meta:
     model = Ride
-    fields = ['duration' , 'notes']
+    fields = ['duration' , 'species' , 'notes']
 
 
 class SpeciesForm(ModelForm):

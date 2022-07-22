@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-content">
         <span class="card-title">The juicy details regarding {{kanga.name}}</span>
-        <p>Height: {{kanga.height}}</p>
+        <p>Height (inches): {{kanga.height}}</p>
         <p>Age: {{kanga.age}}</p>
         <p>Description: {{kanga.description}}</p>
         <p>Likes to kick: {{kanga.favorite_species_to_kick}}s</p>
@@ -23,9 +23,9 @@
         {% else %}
         <div style="width:100%">
             <tr style="display:flex;flex-flow:row nowrap;justify-content:space-around; width:100%">
-                <td>Duration: {{ride.duration}}</td>
+                <td>Duration in seconds: {{ride.duration}}</td>
                 <td>By: {{ride.species}}</td>
-                <td>Important Observations: {{ride.notes}}   </td>
+                <td>Important Observations: {{ride.notes}} </td>
             </tr>
 
         </div>
@@ -41,5 +41,27 @@
         </form>
     </div>
 </div>
+<div class="card">
+    <div class="card-content">
+        <h1>Species that have ridden {{kanga.name}}</h1>
 
+        {% for spec in rider_species %}
+        <h2>{{spec}}</h2>
+        {% endfor %}
+
+    </div>
+</div>
+<div class="card">
+    <div class="card-content">
+        <h1>Species that have NOT ridden {{kanga.name}}</h1>
+        {% for spec in restofthem %}
+        <h2>{{spec}}</h2>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    const selectEl = document.getElementById('id_species');
+    M.FormSelect.init(selectEl);
+</script>
 {% endblock %}
