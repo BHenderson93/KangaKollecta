@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .models import Roo, Species, Ride
-from .forms import RidingForm
+from .forms import RidingForm, SpeciesForm
 
 # Create your views here.
 def home(request):
@@ -41,3 +41,13 @@ def ride_create(request , roo_id):
         new_ride.species = 'Null for now'
         new_ride.save()
     return redirect('detail' , roo_id = roo_id)
+
+def species(request):
+    specs = Species.objects.all()
+    return render(request, 'species/species_index.html' , {'species': specs , 'species_form':SpeciesForm()} )
+
+def species_create(request):
+    form = SpeciesForm(request.POST)
+    if form.is_valid():
+        new_species = form.save()
+    return redirect('species')
